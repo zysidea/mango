@@ -6,11 +6,11 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: true,
-    contentBase: './app',
+    contentBase: './public',
     port: 8080,
     inline: true
   },
-  entry: path.join(__dirname,'/app/index.jsx'),
+  entry: path.join(__dirname,'/src/index.jsx'),
   output: {
     path: path.join(__dirname,'/build'),
     publicPath: '/',
