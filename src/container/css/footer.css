@@ -1,0 +1,17 @@
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: antiquewhite;
+}
+.text{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.times{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}

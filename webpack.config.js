@@ -10,9 +10,9 @@ module.exports = {
     port: 8080,
     inline: true
   },
-  entry: path.join(__dirname,'/src/index.jsx'),
+  entry: path.join(__dirname, '/src/index.js'),
   output: {
-    path: path.join(__dirname,'/build'),
+    path: path.join(__dirname, '/build'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -30,6 +30,13 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192
+        }
       }
     ]
   },

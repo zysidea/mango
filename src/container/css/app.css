@@ -1,0 +1,53 @@
+.logo {
+    margin: 16px;
+}
+
+.logo img {
+    margin-left: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    vertical-align: middle;
+    animation: rotate-avatar infinite 10s linear;
+    -webkit-animation: rotate-avatar infinite 10s linear;
+    -moz-animation: rotate-avatar infinite 10s linear;
+}
+
+.logo span {
+    font-size: 20px;
+    color: white;
+    margin-left: 16px;
+
+}
+
+.sider {
+    overflow: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
+
+@keyframes rotate-avatar {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes rotate-avatar {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate-avatar {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

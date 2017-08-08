@@ -1,0 +1,23 @@
+.header {
+    background-color: #ffffff;
+}
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    margin-left: -24px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.trigger:hover {
+    color: #108ee9;
+}
+
+.logOut {
+    float: right;
+    margin-top: 8px;
+}
+.link{
+    text-align: center;
+}

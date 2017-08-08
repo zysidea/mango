@@ -1,26 +1,32 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import Header from './header';
+import Footer from './footer';
 
-import './App.css';
+import avatar from '../images/avatar.png';
+import './css/app.css';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 export default class Container extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
-
   render() {
     return (
       <Layout>
         <Sider className="sider">
-          <div className="logo" />
+          <div className="logo" >
+            <img src={avatar} alt="" />
+            <span>zys</span>
+          </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['welcome']}>
 
             <Menu.Item key="welcome">
               <Icon type="home" />
-              <span className="welcome">欢迎页</span>
+              <span className="welcome">首页</span>
             </Menu.Item>
 
             <SubMenu key="content" title={<span><Icon type="edit" />内容管理</span>}>
@@ -48,15 +54,12 @@ export default class Container extends React.Component {
           </Menu>
         </Sider>
         <Layout style={{ marginLeft: 200 }}>
-          <Header style={{ background: '#fff', padding: 0 }} />
-
+          <Header />
           <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
             <div style={{ padding: 24, background: '#fff', textAlign: 'center' }} />
           </Content>
 
-          <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2017 Created by ZYSIDEA
-          </Footer>
+          <Footer />
         </Layout>
       </Layout>
     );

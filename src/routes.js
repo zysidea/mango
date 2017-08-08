@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import Container from './container/App';
-
+import Container from './container/app';
 
 const routes = (
   <Router>
