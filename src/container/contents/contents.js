@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { Layout } from 'antd';
 
 
-import './css/contents.css';
+import './contents.css';
 
 const { Content } = Layout;
 

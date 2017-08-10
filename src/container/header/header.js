@@ -3,7 +3,7 @@ import { Layout, Icon, Menu } from 'antd';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import './css/header.css';
+import './header.css';
 
 const { Header } = Layout;
 const SubMenu = Menu.SubMenu;

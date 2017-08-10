@@ -1,9 +1,16 @@
-.logo {
-    margin: 16px;
+
+.sider {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .logo img {
-    margin-left: 16px;
+    position: absolute;
+    top: 20px;
+    left: 12px;
     width: 36px;
     height: 36px;
     border-radius: 36px;
@@ -16,38 +23,58 @@
 .logo span {
     font-size: 20px;
     color: white;
-    margin-left: 16px;
+    position: absolute;
+    top: 20px;
+    left: 65px;
 
 }
 
-.sider {
-    overflow: auto;
-    height: 100vh;
-    position: fixed;
-    left: 0;
+.menu {
+    height: 100%;
+    padding-top: 75px;
+}
+
+.switch {
+    position: absolute;
+    right: 4px;
+    bottom: 36px;
+}
+
+.ant-layout-sider-collapsed .nav-text {
+    display: none;
+}
+.ant-layout-sider-collapsed .name {
+    display: none;
 }
 
 @keyframes rotate-avatar {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
+
 @-webkit-keyframes rotate-avatar {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
+
 @-moz-keyframes rotate-avatar {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
+}
+
+/* 隐藏ant自带的trigger */
+.ant-layout-sider-trigger {
+    display: none;
 }
