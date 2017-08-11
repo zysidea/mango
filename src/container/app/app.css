@@ -1,6 +1,6 @@
 
-.sider {
-    position: fixed;
+.container {
+    position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
@@ -43,6 +43,7 @@
 .ant-layout-sider-collapsed .nav-text {
     display: none;
 }
+
 .ant-layout-sider-collapsed .name {
     display: none;
 }
@@ -74,7 +75,20 @@
     }
 }
 
+.ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+    display: none;
+}
+
+.ant-menu-submenu-vertical .ant-menu-submenu-title span span {
+    display: none;
+}
+
+
 /* 隐藏ant自带的trigger */
 .ant-layout-sider-trigger {
     display: none;
+}
+
+.ant-layout-sider-children {
+    height: 100%;
 }

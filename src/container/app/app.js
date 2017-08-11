@@ -38,9 +38,8 @@ export default class Container extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Layout className="container">
         <Sider
-          className="sider"
           trigger={null}
           collapsible
           onCollapse={this.onCollapse}
@@ -56,7 +55,9 @@ export default class Container extends React.Component {
             className="menu"
             theme={this.state.theme}
             mode={this.state.mode}
+            inlineCollapsed={this.state.collapsed}
             defaultSelectedKeys={['home']}
+            defaultOpenKeys={['']}
           >
 
             <Menu.Item key="welcome">
@@ -97,13 +98,15 @@ export default class Container extends React.Component {
             />
           </div>
         </Sider>
-        <Layout style={{ marginLeft: 200 }}>
+
+        <Layout>
           <Header toggle={this.toggle} collapsed={this.state.collapsed} />
           <Content style={{ margin: '24px 16px 0', overflow: 'initial', minHeight: 1000 }}>
             <div style={{ padding: 24, background: '#fff', textAlign: 'center' }} />
           </Content>
           <Footer />
         </Layout>
+
       </Layout>
     );
   }
