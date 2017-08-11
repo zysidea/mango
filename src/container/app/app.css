@@ -40,11 +40,24 @@
     bottom: 36px;
 }
 
-.ant-layout-sider-collapsed .nav-text {
+.ant-layout-sider-collapsed .name {
     display: none;
 }
 
-.ant-layout-sider-collapsed .name {
+/* 隐藏ant自带的trigger */
+.ant-layout-sider-trigger {
+    display: none;
+}
+
+.ant-layout-sider-children {
+    height: 100%;
+}
+
+.ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+    display: none;
+}
+
+.ant-menu-submenu-vertical .ant-menu-submenu-title span span {
     display: none;
 }
 
@@ -75,20 +88,5 @@
     }
 }
 
-.ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
-    display: none;
-}
-
-.ant-menu-submenu-vertical .ant-menu-submenu-title span span {
-    display: none;
-}
 
 
-/* 隐藏ant自带的trigger */
-.ant-layout-sider-trigger {
-    display: none;
-}
-
-.ant-layout-sider-children {
-    height: 100%;
-}
