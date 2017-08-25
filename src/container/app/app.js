@@ -9,7 +9,7 @@ import './app.css';
 const { Content, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
-export default class Container extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
