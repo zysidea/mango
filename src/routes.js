@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
   Redirect
 } from 'react-router-dom';
 import App from './container/app/app';
@@ -11,9 +12,9 @@ const isLogin = false;
 
 const routes = (
   <Router>
-    <div>
-      <Route exact path="/index" component={App} />
-      <Route exact path="/login" component={Login} />
+    <Switch>
+      <Route path="/index" component={App} />
+      <Route path="/login" component={Login} />
       <Route
         exact
         path="/"
@@ -25,7 +26,7 @@ const routes = (
           )
         )}
       />
-    </div>
+    </Switch>
   </Router>
 );
 export default routes;

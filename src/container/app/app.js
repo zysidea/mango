@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon, Switch } from 'antd';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import {withRouter} from "react-router-dom";
 
 import avatar from '../../images/avatar.png';
 import './app.css';
@@ -9,7 +10,7 @@ import './app.css';
 const { Content, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -106,3 +107,4 @@ export default class App extends React.Component {
     );
   }
 }
+export default withRouter(App);

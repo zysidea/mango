@@ -1,9 +1,7 @@
 import React from 'react';
 import { Form, Icon, Input, Button } from 'antd';
 import PropTypes from 'prop-types';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './login.css';
 
@@ -22,8 +20,8 @@ class LoginPage extends React.Component {
       if (!err) {
         const username = values.username;
         const password = values.password;
-        if (username === '123' && password === '123') {
-          Router.push('/index');
+        if (username === '123' && password === '456') {
+          this.props.history.push('/index');
         }
       }
     });
@@ -34,7 +32,7 @@ class LoginPage extends React.Component {
 
     return (
       <div className="root">
-        <p className="welcome">Welcome to this website!</p>
+        <p className="login-welcome">Welcome to this website!</p>
         <div className="login">
           <Form onSubmit={this.login} className="login-form">
             <FormItem>
@@ -64,9 +62,7 @@ class LoginPage extends React.Component {
             </FormItem>
 
 
-            <Button type="primary" htmlType="submit" className="login-form-button">
-          登录
-            </Button>
+            <Button type="primary" htmlType="submit" className="login-form-button">登录</Button>
           </Form>
         </div>
       </div>
@@ -75,8 +71,9 @@ class LoginPage extends React.Component {
 }
 
 LoginPage.PropTypes = {
-  form: PropTypes.object.isRequired
+  form: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 const Login = Form.create()(LoginPage);
-export default Login;
+export default withRouter(Login);
