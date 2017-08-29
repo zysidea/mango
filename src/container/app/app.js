@@ -1,13 +1,16 @@
 import React from 'react';
 import { Layout, Menu, Icon, Switch } from 'antd';
+import { withRouter } from 'react-router-dom';
+
 import Header from '../header/header';
+import Content from '../contents/contents';
 import Footer from '../footer/footer';
-import {withRouter} from "react-router-dom";
+
 
 import avatar from '../../images/avatar.png';
 import './app.css';
 
-const { Content, Sider } = Layout;
+const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class App extends React.Component {
@@ -50,14 +53,15 @@ class App extends React.Component {
 
           <Menu
             theme={this.state.theme}
-            defaultOpenKeys={['welcome']}
+            defaultOpenKeys={['home']}
             className="menu"
+            defaultSelectedKeys={['home']}
             mode={this.state.mode}
           >
 
-            <Menu.Item key="welcome">
+            <Menu.Item key="home">
               <Icon type="home" />
-              {!this.state.collapsed && <span className="welcome">首页</span>}
+              {!this.state.collapsed && <span className="home">首页</span>}
             </Menu.Item>
 
             <SubMenu key="content" title={<span><Icon type="edit" />{!this.state.collapsed && <span>内容管理</span>}</span>}>
@@ -97,9 +101,7 @@ class App extends React.Component {
 
         <Layout>
           <Header toggle={this.toggle} collapsed={this.state.collapsed} />
-          <Content style={{ margin: '24px 16px 0', overflow: 'initial', minHeight: 1000 }}>
-            <div style={{ padding: 24, background: '#fff', textAlign: 'center' }} />
-          </Content>
+          <Content />
           <Footer />
         </Layout>
 
