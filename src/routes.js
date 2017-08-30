@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import App from './container/app/app';
+import Container from './container/index';
 import Login from './pages/login/login';
 
 const isLogin = false;
@@ -13,19 +13,19 @@ const isLogin = false;
 const routes = (
   <Router>
     <Switch>
-      <Route path="/index" component={App} />
       <Route path="/login" component={Login} />
       <Route
         exact
         path="/"
         render={() => (
           isLogin ? (
-            <Redirect to="/index" />
+            <Redirect to="/" />
           ) : (
             <Redirect to="/login" />
           )
         )}
       />
+      <Route component={Container} />
     </Switch>
   </Router>
 );

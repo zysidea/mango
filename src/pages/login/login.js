@@ -21,7 +21,7 @@ class LoginPage extends React.Component {
         const username = values.username;
         const password = values.password;
         if (username === '123' && password === '456') {
-          this.props.history.push('/index');
+          this.props.history.push('/home');
         }
       }
     });

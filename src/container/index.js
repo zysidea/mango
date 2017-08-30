@@ -1,26 +1,31 @@
 import React from 'react';
 import { Layout, Menu, Icon, Switch } from 'antd';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-import Header from '../header/header';
-import Content from '../contents/contents';
-import Footer from '../footer/footer';
+import Header from './header/header';
+import Content from './contents/contents';
+import Footer from './footer/footer';
 
 
-import avatar from '../../images/avatar.png';
-import './app.css';
+import avatar from '../images/avatar.png';
+import './index.css';
 
 const { Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
-class App extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       theme: 'dark',
       collapsed: false,
+      current: 'home',
       mode: 'inline'
     };
+  }
+
+  componentDidMount() {
+    this.handleClick([], 'home');
   }
 
   changeTheme=(value) => {
@@ -34,6 +39,17 @@ class App extends React.Component {
       collapsed: !this.state.collapsed,
       mode: this.state.collapsed ? 'inline' : 'vertical',
     });
+  };
+
+  handleClick = (e, special) => {
+    this.setState({
+      current: e.key || special,
+    });
+  };
+
+
+  logOut=() => {
+
   };
 
 
@@ -55,18 +71,21 @@ class App extends React.Component {
             theme={this.state.theme}
             defaultOpenKeys={['home']}
             className="menu"
-            defaultSelectedKeys={['home']}
+            onClick={this.handleClick}
+            selectedKeys={[this.state.current]}
             mode={this.state.mode}
           >
 
             <Menu.Item key="home">
-              <Icon type="home" />
-              {!this.state.collapsed && <span className="home">首页</span>}
+              <Link to="/home">
+                <Icon type="home" />
+                {!this.state.collapsed && <span className="home">首页</span>}
+              </Link>
             </Menu.Item>
 
             <SubMenu key="content" title={<span><Icon type="edit" />{!this.state.collapsed && <span>内容管理</span>}</span>}>
               <Menu.Item key="music">
-                <span className="music">音乐系列</span>
+                <Link to="/music"><span className="music">音乐系列</span></Link>
               </Menu.Item>
               <Menu.Item key="movie">
                 <span className="movie">电影系列</span>
@@ -100,7 +119,7 @@ class App extends React.Component {
         </Sider>
 
         <Layout>
-          <Header toggle={this.toggle} collapsed={this.state.collapsed} />
+          <Header toggle={this.toggle} logOut={this.logOut} collapsed={this.state.collapsed} />
           <Content />
           <Footer />
         </Layout>
@@ -109,4 +128,4 @@ class App extends React.Component {
     );
   }
 }
-export default withRouter(App);
+export default withRouter(Container);

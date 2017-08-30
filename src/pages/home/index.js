@@ -1,7 +1,6 @@
-import { Row, Col, Card, Icon } from 'antd';
+import { Row, Col, Card, Icon, Timeline } from 'antd';
 import React from 'react';
 import Chart from './chart';
-
 
 import './index.css';
 
@@ -47,9 +46,20 @@ export default class Home extends React.Component {
               </div>
             </Card>
           </Col>
+          <Col span={12} className="col-b">
+            <Card>
+              <Timeline>
+                <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+                <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+                <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+                <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+              </Timeline>
+            </Card>
+          </Col>
         </Row>
         <Row gutter={8}>
-          <Col span={12} className="col-b">
+
+          <Col span={12} className="col-c">
             <div className="visit">
               <Card title="访问量统计" extra={<Icon type="reload" />}>
                 <div className="visit-chart">

@@ -1,29 +1,28 @@
 
-
-.col-a{
+.col-a {
     max-width: 240px;
     min-width: 120px;
 }
 
-.col-a .home-icon{
-    color:red;
+.col-a .home-icon {
+    color: red;
     float: left;
     margin-left: 36px;
     margin-right: 16px;
     font-size: 30px;
     height: 44px;
 }
-.col-a p{
+
+.col-a p {
     font-size: x-large;
 }
-
-
-.visit{
+.visit {
     margin-top: 16px;
     max-width: 488px;
     min-width: 488px;
 
 }
-.visit-chart{
+
+.visit-chart {
     max-width: 100%;
 }

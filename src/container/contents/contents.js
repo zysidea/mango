@@ -2,7 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { Layout } from 'antd';
 
-import Home from '../../pages/home/index'
+import Home from '../../pages/home/index';
+import Music from '../../pages/content/music/index';
 
 import './contents.css';
 
@@ -17,7 +18,8 @@ export default class Contents extends React.Component {
   render() {
     return (
       <Content>
-        <Route path="/index" component={Home} />
+        <Route path="/home" component={Home} />
+        <Route path="/music" component={Music} />
       </Content>
     );
   }
